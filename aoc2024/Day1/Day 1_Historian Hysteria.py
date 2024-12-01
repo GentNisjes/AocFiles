@@ -1,51 +1,28 @@
-file = open("")
-
-
-# Part 1 
+with open('input.txt', 'r') as f:
+    lines = f.readlines()  
 
 left_list = []
 right_list = []
 
-# line_count = 0
-
-for line in file:
+for line in lines:
     line = line.strip()
     parts = line.split()
-    left_list.append(parts[0])
-    right_list.append(parts[1])
+    left_list.append(int(parts[0]))
+    right_list.append(int(parts[1]))
 
-# # print("left list: ", left_list)
-# # print("right list: ", right_list) 
+# Part 1: Calculating the total sum
+total_sum = 0
 
-# left_list.sort()
-# right_list.sort()
+for a, b in zip(left_list, right_list):  # Loop through both lists simultaneously
+    total_sum += abs(a - b)
 
-# print("left list: ", left_list)
-# print("right list: ", right_list) 
+print("Part 1 Total Sum:", total_sum)
 
-# total_sum = 0
-
-# for i in range(0,len(left_list)):
-#     if (left_list[i] > right_list[i]):
-#         total_sum += int(left_list[i]) - int(right_list[i])
-#     else:
-#         total_sum += int(right_list[i]) - int(left_list[i])
-
-# print(total_sum)
-
-# Part 2
-
-multiplicators = [0] * len(left_list)
+# Part 2: calculate multiplicators
 total_mult = 0
 
-for i in range(0,len(left_list)):
-    number = left_list[i]
-    for comp_num in right_list:
-        if comp_num == number: multiplicators[i] += 1
-    
-    total_mult += multiplicators[i] * int(left_list[i])
+for number in left_list:
+    count = right_list.count(number)  
+    total_mult += count * number
 
-# print(multiplicators)
-print(total_mult)
-
-
+print("Part 2 Total Multiplicators Sum:", total_mult)
