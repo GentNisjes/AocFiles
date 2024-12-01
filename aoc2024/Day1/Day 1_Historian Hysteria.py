@@ -1,4 +1,4 @@
-file = open("/Users/Stijn/OneDrive - KU Leuven/PERSONAL/Rommel/AocFiles/aoc2024/input.txt")
+file = open("")
 
 
 # Part 1 
