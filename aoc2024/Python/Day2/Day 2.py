@@ -1,3 +1,4 @@
+
 with open("", 'r') as f:
     lines = f.readlines()  
 
@@ -8,4 +9,4 @@ for line in lines:
     line = line.strip()
     tot_arr.append(line.split())
 
-print(tot_arr)
+
