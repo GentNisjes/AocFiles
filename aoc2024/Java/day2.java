@@ -78,26 +78,40 @@ public class Day2 {
         return false; // If the array is not in sorted order, return false
     }
 
+    // Method to check if removing one level can make the report safe
+    public boolean checkValidityWithOneRemoval(int[] arrayToCheck) {
+        // If the original report is safe, no need to remove anything
+        if (checkValidity(arrayToCheck)) {
+            return true;
+        }
+
+        // Try removing each element and check if the resulting array is valid
+        for (int i = 0; i < arrayToCheck.length; i++) {
+            // Create a new array without the i-th element
+            int[] newArray = new int[arrayToCheck.length - 1];
+            int index = 0;
+            for (int j = 0; j < arrayToCheck.length; j++) {
+                if (j != i) {
+                    newArray[index++] = arrayToCheck[j];
+                }
+            }
+
+            if (checkValidity(newArray)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public static void main(String[] args) {
         Day2 day2 = new Day2();
         String fileName = "/Users/Stijn/OneDrive - KU Leuven/PERSONAL/Rommel/AocFiles/aoc2024/java/input.txt";
-        // ArrayList<int[]> data = new ArrayList<int[]>();
         ArrayList<int[]> data = readFileToArray(fileName);
-
-        // Print the content of the main array
-        // if (data != null) {
-        // for (int[] subArray : data) {
-        // for (int num : subArray) {
-        // System.out.print(num + " ");
-        // }
-        // System.out.println();
-        // }
-        // }
-
         int count = 0;
 
         for (int[] arr : data) {
-            if (day2.checkValidity(arr)) {
+            if (day2.checkValidityWithOneRemoval(arr)) {
                 count++;
             }
         }
