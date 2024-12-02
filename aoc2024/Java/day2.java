@@ -40,8 +40,8 @@ public class Day2 {
         Arrays.sort(increasingArray);
 
         // Check for decreasing order
-        // but the stupid Array class doesnt have reverse order sort build in so build
-        // one yourself
+        // but the stupid Array class doesn't have reverse order sort build in so build
+        // one yourself :)
         int[] decreasingArray = arrayToCheck.clone();
         Arrays.sort(decreasingArray);
         // doin it twice as fast, by switching symetrically
@@ -61,7 +61,7 @@ public class Day2 {
         return false;
     }
 
-    // Helper method to check if the sequence is valid (i.e., differences between
+    // Helper method to check if the sequence is valid (differences between
     // adjacent elements are within 1 to 3)
     private boolean isValidSequence(int[] sortedArray, int[] originalArray) {
         // Check if the sorted array and the original array are equal
