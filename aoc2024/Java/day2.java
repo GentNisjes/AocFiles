@@ -1,4 +1,5 @@
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.File;
 
@@ -35,6 +36,7 @@ public class day2 {
 
     public static void main(String[] args) {
         String fileName = "input.txt"; // Specify the file name
+        // ArrayList<int[]> data = new ArrayList<int[]>();
         ArrayList<int[]> data = readFileToArray(fileName);
 
         // Print the content of the main array
