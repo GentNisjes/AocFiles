@@ -6,9 +6,8 @@ with open("/Users/Stijn/OneDrive - KU Leuven/PERSONAL/Rommel/AocFiles/aoc2024/Py
 
 arr = []
 pattern = r"mul\((\d{1,3}),(\d{1,3})\)"
-print(lines)
 
 for line in lines:
     arr.append(re.findall(pattern, line))
 
-
+print(arr)
